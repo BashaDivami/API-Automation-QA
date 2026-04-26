@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="85" failures="0" errors="0" time="0.681">
+  <testsuite name="Orders API" errors="0" failures="0" skipped="0" timestamp="2026-04-26T17:28:37" time="0.283" tests="14">
+    <testcase classname="Orders API &gt; POST /orders" name="[TC-ORD-001] Place order from non-empty cart — returns 201 with orderId and total" time="0.006" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; POST /orders" name="[TC-ORD-002] Place order with empty cart — returns 400 Bad Request" time="0.004" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; POST /orders" name="[TC-ORD-003] No auth token — returns 401 Unauthorized" time="0.004" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; POST /orders" name="[TC-ORD-004] Invalid auth token — returns 401 Unauthorized" time="0.004" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; GET /orders/{orderId}" name="[TC-ORD-005] Valid orderId — returns 200 with full order details" time="0.004" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; GET /orders/{orderId}" name="[TC-ORD-006] Order status is a valid enum value" time="0.009" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; GET /orders/{orderId}" name="[TC-ORD-007] Non-existent orderId — returns 404 Not Found" time="0.007" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; GET /orders/{orderId}" name="[TC-ORD-008] No auth token — returns 401 Unauthorized" time="0.011" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; GET /orders/{orderId}" name="[TC-ORD-009] Invalid auth token — returns 401 Unauthorized" time="0.004" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; DELETE /orders/{orderId}/cancel" name="[TC-ORD-010] Cancel a pending order — returns 200 with status=cancelled" time="0.004" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; DELETE /orders/{orderId}/cancel" name="[TC-ORD-011] Cancel already-cancelled order — returns 422/404 or 200 (API deviation noted)" time="0.001" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; DELETE /orders/{orderId}/cancel" name="[TC-ORD-012] Cancel non-existent orderId — returns 404 Not Found" time="0.001" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; DELETE /orders/{orderId}/cancel" name="[TC-ORD-013] No auth token — returns 401 Unauthorized" time="0.001" file="src/tests/orders/orders.test.js">
+    </testcase>
+    <testcase classname="Orders API &gt; DELETE /orders/{orderId}/cancel" name="[TC-ORD-014] Invalid auth token — returns 401 Unauthorized" time="0.001" file="src/tests/orders/orders.test.js">
+    </testcase>
+  </testsuite>
+  <testsuite name="Cart API" errors="0" failures="0" skipped="0" timestamp="2026-04-26T17:28:37" time="0.077" tests="17">
+    <testcase classname="Cart API &gt; POST /cart/items" name="[TC-CART-001] Add valid item — returns 201 with cartTotal" time="0.003" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; POST /cart/items" name="[TC-CART-002] Add another item — cartTotal increases" time="0.007" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; POST /cart/items" name="[TC-CART-003] No auth token — returns 401 Unauthorized" time="0.002" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; POST /cart/items" name="[TC-CART-004] Invalid auth token — returns 401 Unauthorized" time="0.002" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; POST /cart/items" name="[TC-CART-005] Missing productId — returns 400 Bad Request" time="0.002" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; POST /cart/items" name="[TC-CART-006] Missing quantity — returns 400 Bad Request" time="0.002" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; POST /cart/items" name="[TC-CART-007] Non-existent productId — returns 404 Not Found" time="0.002" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; POST /cart/items" name="[TC-CART-008] Zero quantity — returns 400 Bad Request" time="0.001" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; POST /cart/items" name="[TC-CART-009] Empty body — returns 400 Bad Request" time="0.001" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; GET /cart" name="[TC-CART-010] View cart — returns 200 with items, subtotal, itemCount" time="0.001" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; GET /cart" name="[TC-CART-011] Cart subtotal matches itemCount &gt; 0 when items added" time="0.002" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; GET /cart" name="[TC-CART-012] No auth token — returns 401 Unauthorized" time="0.001" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; GET /cart" name="[TC-CART-013] Invalid auth token — returns 401 Unauthorized" time="0.001" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; DELETE /cart/items/{itemId}" name="[TC-CART-014] Remove existing item — returns 200 with updated cartTotal" time="0.001" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; DELETE /cart/items/{itemId}" name="[TC-CART-015] Remove non-existent item — returns 404 Not Found" time="0.003" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; DELETE /cart/items/{itemId}" name="[TC-CART-016] No auth token — returns 401 Unauthorized" time="0.002" file="src/tests/cart/cart.test.js">
+    </testcase>
+    <testcase classname="Cart API &gt; DELETE /cart/items/{itemId}" name="[TC-CART-017] Invalid auth token — returns 401 Unauthorized" time="0.001" file="src/tests/cart/cart.test.js">
+    </testcase>
+  </testsuite>
+  <testsuite name="Payments API" errors="0" failures="0" skipped="0" timestamp="2026-04-26T17:28:37" time="0.089" tests="17">
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-001] Valid payment (credit_card) — returns 201 with paymentId" time="0.004" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-002] Duplicate payment for same order — returns 409 Conflict" time="0.003" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-003] Non-existent orderId — returns 404 Not Found" time="0.002" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-004] Missing orderId — returns 400 Bad Request" time="0.002" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-005] Missing method — returns 400 Bad Request" time="0.002" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-006] Empty body — returns 400 Bad Request" time="0.001" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-007] No auth token — returns 401 Unauthorized" time="0.002" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-008] Invalid auth token — returns 401 Unauthorized" time="0.001" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-009] Payment method credit_card — accepted by the API" time="0.004" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-009] Payment method debit_card — accepted by the API" time="0.005" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-009] Payment method upi — accepted by the API" time="0.006" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; POST /payments" name="[TC-PAY-009] Payment method net_banking — accepted by the API" time="0.007" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; GET /payments/{paymentId}" name="[TC-PAY-013] Valid paymentId — returns 200 with payment details" time="0.001" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; GET /payments/{paymentId}" name="[TC-PAY-014] Payment amount is a positive number" time="0.002" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; GET /payments/{paymentId}" name="[TC-PAY-015] Non-existent paymentId — returns 404 Not Found" time="0.002" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; GET /payments/{paymentId}" name="[TC-PAY-016] No auth token — returns 401 Unauthorized" time="0.001" file="src/tests/payments/payments.test.js">
+    </testcase>
+    <testcase classname="Payments API &gt; GET /payments/{paymentId}" name="[TC-PAY-017] Invalid auth token — returns 401 Unauthorized" time="0.002" file="src/tests/payments/payments.test.js">
+    </testcase>
+  </testsuite>
+  <testsuite name="E2E — Full Order Lifecycle" errors="0" failures="0" skipped="0" timestamp="2026-04-26T17:28:37" time="0.051" tests="12">
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-001] Register a new user" time="0.004" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-002] Login with newly registered user credentials" time="0.001" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-003] Browse the product catalog" time="0.002" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-004] View product details for selected item" time="0.001" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-005] Add selected product to cart" time="0.002" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-006] View cart — contains the added item" time="0.001" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-007] Place order from cart" time="0.001" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-008] Retrieve placed order — status is pending" time="0.002" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-009] Process payment for the order" time="0.003" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-010] Retrieve payment — status reflects successful payment" time="0.001" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-011] Cart is empty after order placement" time="0.002" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+    <testcase classname="E2E — Full Order Lifecycle" name="[TC-E2E-012] Paid order cannot be paid again — returns 409 Conflict" time="0.002" file="src/tests/e2e/full_order_flow.test.js">
+    </testcase>
+  </testsuite>
+  <testsuite name="Auth API" errors="0" failures="0" skipped="0" timestamp="2026-04-26T17:28:37" time="0.064" tests="14">
+    <testcase classname="Auth API &gt; POST /auth/login" name="[TC-AUTH-001] Valid credentials — returns 200 with token and userId" time="0.004" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/login" name="[TC-AUTH-002] Wrong password — returns 401 Unauthorized" time="0.002" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/login" name="[TC-AUTH-003] Non-existent user — returns 401 Unauthorized" time="0.003" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/login" name="[TC-AUTH-004] Missing password field — returns 400 Bad Request" time="0.002" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/login" name="[TC-AUTH-005] Missing email field — returns 400 Bad Request" time="0.001" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/login" name="[TC-AUTH-006] Empty request body — returns 400 Bad Request" time="0.004" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/login" name="[TC-AUTH-007] Response schema — token is a non-empty string" time="0.002" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/register" name="[TC-AUTH-008] New user registration — returns 201 with userId" time="0.004" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/register" name="[TC-AUTH-009] Duplicate email — returns 409 Conflict" time="0.004" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/register" name="[TC-AUTH-010] Missing name field — returns 400 Bad Request" time="0.002" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/register" name="[TC-AUTH-011] Missing email field — returns 400 Bad Request" time="0.002" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/register" name="[TC-AUTH-012] Missing password field — returns 400 Bad Request" time="0.001" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/register" name="[TC-AUTH-013] Empty request body — returns 400 Bad Request" time="0.001" file="src/tests/auth/auth.test.js">
+    </testcase>
+    <testcase classname="Auth API &gt; POST /auth/register" name="[TC-AUTH-014] Registered user can login immediately after registration" time="0.003" file="src/tests/auth/auth.test.js">
+    </testcase>
+  </testsuite>
+  <testsuite name="Products API" errors="0" failures="0" skipped="0" timestamp="2026-04-26T17:28:37" time="0.065" tests="11">
+    <testcase classname="Products API &gt; GET /products" name="[TC-PROD-001] No filters — returns 200 with product list and pagination meta" time="0.005" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products" name="[TC-PROD-002] Filter by category=electronics — returns 200 with filtered results" time="0.004" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products" name="[TC-PROD-003] Pagination — page=1&amp;limit=5 returns at most 5 products" time="0.002" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products" name="[TC-PROD-004] Pagination — page=2 returns next set of results" time="0.003" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products" name="[TC-PROD-005] Combined filter — category + pagination returns correct shape" time="0.004" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products" name="[TC-PROD-006] Unknown category — returns 200 with empty data array" time="0.002" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products" name="[TC-PROD-007] Product object schema — has id, name, price, category, stock" time="0.002" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products/{id}" name="[TC-PROD-008] Valid product ID — returns 200 with product details" time="0.003" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products/{id}" name="[TC-PROD-009] Non-existent product ID — returns 404 Not Found" time="0.002" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products/{id}" name="[TC-PROD-010] Product price is a positive number" time="0.002" file="src/tests/products/products.test.js">
+    </testcase>
+    <testcase classname="Products API &gt; GET /products/{id}" name="[TC-PROD-011] Product stock is a non-negative integer" time="0.002" file="src/tests/products/products.test.js">
+    </testcase>
+  </testsuite>
+</testsuites>
